@@ -1,0 +1,76 @@
+@use "sass:list";
+
+:root{
+  --mariner     : #227ac5;
+  --congressblue: #07409a;
+  --oxfordblue  : #011638;
+  --azureradiance: #007bff;
+  --curiousblue : #2894be;
+  --aquaperl    : #83B3DB;
+  --malibu      : #5ac1ff;
+  --greenblue   : #0a71c6;
+  --blueberry   : #41a4f5;
+  --denim       : #3483c4;
+  --veniceblue  : #085a9f;
+  --steelblue   : #4682b4;
+  --blue        : #1805ff;
+  
+  --lipstick    : #c60a71;
+  --elfgreen    : #0a8b71;
+  --alienarmpit : #71c60a;
+  --cornharvest : #8b710a;
+      
+  --camarone    : #006d07;
+  --chateaugreen: #47b44e;
+  --olive       : #6d6d00;
+  --chenin      : #dbdb6e;
+    
+  --lemon       : #ffff36;
+  --sunglow     : #ffc436;
+  --cyan        : #36ffff;
+  --heliotrope  : #c436ff;
+    
+  --palecanary  : #ffff93;
+  --peachorange : #ffc493;
+  --freshair    : #b2ffff;
+  --mauve       : #c493ff;
+    
+  --heavymetal  : #202320;
+  --white       : #ffffff;
+  --stack       : #606260;
+  --silver      : #cacaca;
+  --pumpkin     : #ff7821;
+  --pastelgreeen: #5de34e;
+  --redsalsa    : #fb3345;
+  --corn        : #e8ca00;
+  --blackrock   : #030325;
+  --tealblue    : #063863;
+  --waterleaf   : #a3eaea;
+  --lightcyan   : #e0ffff;
+  --yellow      : #fff70;
+};
+
+[data-theme="light"]{
+  --bg-color     : var(--white);
+  --color        : var(--heavymetal);
+  --togglebg     : var(--silver);
+  --toggleslider : var(--white);
+  --roundcolor   : var(--white);
+  --svg-container: var(--elfgreen);
+  --svg-icon     : var(--pumpkin);
+  --svg-color    : var(--redsalsa);
+}
+
+[data-theme="dark"]{
+  --bg-color     : var(--heavymetal);
+  --color        : var(--white);
+  --togglebg     : var(--heavymetal);
+  --toggleslider : var(--silver);
+  --roundcolor   : var(--heavymetal);
+  --svg-container: var(--white);
+  --svg-icon     : var(--pastelgreeen);
+  --svg-color    : var(--white);
+}
+
+
+
