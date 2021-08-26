@@ -1,3 +1,5 @@
+@use "sass:list";
+
 @mixin _full {
   width: 100%;
   height: 100%;
@@ -26,7 +28,7 @@ body {
   @include _full;
 }
 
-$size-spaces: (4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 75, 100, 128, 150, 170, 200, 256, 512);
+$size-spaces: (4, 5, 10, 8, 12, 16, 20, 24, 28, 32, 48, 64, 75, 100, 128, 150, 170, 200, 256, 512);
 .box {
   overflow: hidden;
   display: flex;
@@ -54,13 +56,20 @@ $size-spaces: (4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 75, 100, 128, 150, 170, 200
   .w-#{$e} {
     width: #{$e}px;
   }
+  .h-#{$e} {
+    height: #{$e}px;
+  }
 }
 
 $i: 5;
 @while $i < 100 {
-  .w-#{$i} {
+  .w-percent-#{$i} {
     $k: #{$i} + "%";
     width: #{$k};
+  }
+  .h-percent-#{$i} {
+    $k: #{$i} + "%";
+    height: #{$k};
   }
   $i: $i + 5;
 }
@@ -77,7 +86,7 @@ $i: 0;
         position: absolute;
         top: #{$d};
     }
-    $i: $i + 30;
+    $i: $i + 15;
 }
 
 $i: 0;
@@ -88,4 +97,3 @@ $i: 0;
   }
   $i: $i + 0.1;
 }
-

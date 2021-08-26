@@ -1,27 +1,29 @@
 @use "sass:list";
 
 :root{
-  --mariner     : #227ac5;
-  --congressblue: #07409a;
   --oxfordblue  : #011638;
-  --azureradiance: #007bff;
-  --curiousblue : #2894be;
-  --aquaperl    : #83B3DB;
-  --malibu      : #5ac1ff;
-  --greenblue   : #0a71c6;
-  --blueberry   : #41a4f5;
-  --denim       : #3483c4;
-  --veniceblue  : #085a9f;
-  --steelblue   : #4682b4;
+  --tealblue    : #063863;
+  --congressblue: #07409a;
   --blue        : #1805ff;
+  --azureradiance: #007bff;
+  --veniceblue  : #085a9f;
+  --greenblue   : #0a71c6;
+  --mariner     : #227ac5;
+  --steelblue   : #4682b4;
+  --denim       : #3483c4;
+  --curiousblue : #2894be;
+  --blueberry   : #41a4f5;
+  --malibu      : #5ac1ff;
+  --aquaperl    : #83B3DB;
   
   --lipstick    : #c60a71;
-  --elfgreen    : #0a8b71;
-  --alienarmpit : #71c60a;
   --cornharvest : #8b710a;
-      
+  
   --camarone    : #006d07;
+  --elfgreen    : #0a8b71;
   --chateaugreen: #47b44e;
+  --pastelgreeen: #5de34e;
+  --alienarmpit : #71c60a;
   --olive       : #6d6d00;
   --chenin      : #dbdb6e;
     
@@ -35,16 +37,14 @@
   --freshair    : #b2ffff;
   --mauve       : #c493ff;
     
-  --heavymetal  : #202320;
   --white       : #ffffff;
+  --heavymetal  : #202320;
   --stack       : #606260;
   --silver      : #cacaca;
   --pumpkin     : #ff7821;
-  --pastelgreeen: #5de34e;
   --redsalsa    : #fb3345;
   --corn        : #e8ca00;
   --blackrock   : #030325;
-  --tealblue    : #063863;
   --waterleaf   : #a3eaea;
   --lightcyan   : #e0ffff;
   --yellow      : #fff70;
@@ -53,19 +53,19 @@
 [data-theme="light"]{
   --bg-color     : var(--white);
   --color        : var(--heavymetal);
-  --togglebg     : var(--silver);
-  --toggleslider : var(--white);
   --roundcolor   : var(--white);
   --svg-container: var(--elfgreen);
   --svg-icon     : var(--pumpkin);
   --svg-color    : var(--redsalsa);
+  --object-bg    : var(--pastelgreeen);
+  --object-fg    : var(--mariner);
+  --object-on    : var(--pastelgreeen);
+  --object-off   : var(--silver);
 }
 
 [data-theme="dark"]{
   --bg-color     : var(--heavymetal);
   --color        : var(--white);
-  --togglebg     : var(--heavymetal);
-  --toggleslider : var(--silver);
   --roundcolor   : var(--heavymetal);
   --svg-container: var(--white);
   --svg-icon     : var(--pastelgreeen);
@@ -73,4 +73,19 @@
 }
 
 
+$map-colors-gradient:(
+    "magenta": (rgb(58, 135, 234), rgb(255, 0, 255)),
+    "deepsea": (rgb(0, 128, 102), rgb(135, 222, 205)),
+    "red": (rgb(255, 0, 0), rgb(255, 204, 0)),
+    "blue": (rgb(0, 0, 255), rgb(159, 229, 215)),
+    "guardsmanred": (rgb(212, 0, 0), rgb(255, 52, 255)),
+    "supernova": (rgb(255, 204, 0), rgb(212, 42, 255)),
+    "brightturquoise": (rgb(0, 255, 204), rgb(42, 127, 255))
+);
+
+@each $key, $val1, $val2 in $map-colors-gradient {
+    .gradient-#{$key} {
+	      background: linear-gradient(45deg, #{$val1} #{$val2}) !important; 
+    }
+}
 
