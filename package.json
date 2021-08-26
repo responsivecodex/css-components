@@ -10,7 +10,8 @@
     "git-1": "git init",
     "git-2": "git remote add responsivecodex remote https://github.com/responsivecodex/css-components.git",
     "git-3": "git remote -v",
-    "git-4": "git add . && git commit -m \"Commit updated components\" && git push responsivecodex master"
+    "git-4": "git add . && git commit -m \"Commit updated components\" && git push responsivecodex master",
+    "git-5": "git push responsivecodex master"
   },
   "repository": {
     "type": "git",
