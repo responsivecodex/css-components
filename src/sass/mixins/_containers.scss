@@ -10,7 +10,7 @@
 
 html,body{
     @include _full;
-    @include _noaround;
+    @include _no-around;
 }
 
 .container-centered{

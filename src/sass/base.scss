@@ -1,3 +1,8 @@
-@import './mixins/_colors';
-@import './mixins/_components';
-@import './mixins/_containers';
+@import './mixins/colors';
+@import './mixins/containers';
+@import './mixins/components';
+@import './mixins/objects/_glassmorphism';
+@import './mixins/objects/_spheres';
+@import './mixins/objects/_switch-theme';
+@import './mixins/objects/_switch-form';
+//@import './mixins/effects';

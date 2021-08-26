@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "servor": "servor dist index.html 3001 --browse --reload",
-    "git-0": "git clone https://github.com/responsivecodex/css-components.git",
+    "git-0": "git clone https://github.com/responsivecodex/css-components.git fs-docker",
     "git-1": "git init",
-    "git-2": "git remote add responsivecodex https://github.com/responsivecodex/css-components.git",
+    "git-2": "git remote add responsivecodex remote https://github.com/responsivecodex/css-components.git",
     "git-3": "git remote -v",
     "git-4": "git add . && git commit -m \"Commit updated components\" && git push responsivecodex master"
   },
@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/responsivecodex/css-components#readme",
   "devDependencies": {
-    "bootstrap": "npm:null@*",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.1",
     "font-awesome": "^4.7.0",
     "servor": "^4.0.2"
   }
