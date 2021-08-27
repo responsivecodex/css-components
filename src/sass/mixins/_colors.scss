@@ -6,47 +6,60 @@
   --congressblue: #07409a;
   --blue        : #1805ff;
   --azureradiance: #007bff;
+  --royalblue   : #3a87ea;
   --veniceblue  : #085a9f;
   --greenblue   : #0a71c6;
   --mariner     : #227ac5;
   --steelblue   : #4682b4;
   --denim       : #3483c4;
+  --pictonblue  : #44aae8;
   --curiousblue : #2894be;
   --blueberry   : #41a4f5;
-  --malibu      : #5ac1ff;
+  --malibu      : #62afff;
+  --cornflower  : #a9cbef;
+  --shipcove    : #7c9bb7;
+  --bermudagray : #6789a7;
   --aquaperl    : #83B3DB;
+  --cyan        : #36ffff;
+  --lightcyan   : #e0ffff;
+  --waterleaf   : #a3eaea;
+  --freshair    : #b2ffff;
   
   --lipstick    : #c60a71;
   --cornharvest : #8b710a;
   
   --camarone    : #006d07;
+  --deepsea     : #008066;
   --elfgreen    : #0a8b71;
   --chateaugreen: #47b44e;
   --pastelgreeen: #5de34e;
   --alienarmpit : #71c60a;
   --olive       : #6d6d00;
-  --chenin      : #dbdb6e;
-    
+
   --lemon       : #ffff36;
-  --sunglow     : #ffc436;
-  --cyan        : #36ffff;
-  --heliotrope  : #c436ff;
-    
   --palecanary  : #ffff93;
+  --chenin      : #dbdb6e;
+  --supernova   : #ffcc00;  
+  --sunglow     : #ffc436;
+  
+  --magenta       : #ff00ff;
+  --purplepizzazz : #ff34ff;
+  --heliotrope    : #c436ff;
+  --electricviolet: #7B31FF;
+  --mauve         : #c493ff;
+  
   --peachorange : #ffc493;
-  --freshair    : #b2ffff;
-  --mauve       : #c493ff;
     
   --white       : #ffffff;
-  --heavymetal  : #202320;
-  --stack       : #606260;
+  --diesel      : #090000;
+  --heavymetal  : rgb(32, 35, 32);
+  --riverbed    : #44555f;
+  --stack       : rgb(96, 98, 96);
   --silver      : #cacaca;
   --pumpkin     : #ff7821;
   --redsalsa    : #fb3345;
   --corn        : #e8ca00;
   --blackrock   : #030325;
-  --waterleaf   : #a3eaea;
-  --lightcyan   : #e0ffff;
   --yellow      : #fff70;
 };
 
@@ -57,10 +70,22 @@
   --svg-container: var(--elfgreen);
   --svg-icon     : var(--pumpkin);
   --svg-color    : var(--redsalsa);
-  --object-bg    : var(--pastelgreeen);
-  --object-fg    : var(--mariner);
-  --object-on    : var(--pastelgreeen);
-  --object-off   : var(--silver);
+
+  --object-border-1: var(--diesel);
+  --object-border-2: var(--heavymetal);
+  --object-border-3: var(--white);
+  --object-border-4: var(--blueberry);
+  --object-bg-1    : var(--diesel);
+  --object-bg-2    : var(--riverbed);
+  --object-fg-1    : var(--pictonblue);
+  --object-fg-2    : var(--pictonblue);
+
+  // --object-border-1: var(--congressblue);
+  // --object-border-2: var(--mariner);
+  // --object-bg-1  : var(--white);
+  // --object-bg-2  : var(--cornflower);
+  // --object-fg-1  : var(--oxfordblue);
+  // --object-fg-2  : var(--blueberry);
 }
 
 [data-theme="dark"]{
@@ -70,17 +95,23 @@
   --svg-container: var(--white);
   --svg-icon     : var(--pastelgreeen);
   --svg-color    : var(--white);
+  --object-border-1: var(--congressblue);
+  --object-border-2: var(--mariner);
+  --object-bg-1  : var(--bermudagray);
+  --object-bg-2  : var(--cornflower);
+  --object-fg-1  : var(--oxfordblue);
+  --object-fg-2  : var(--blueberry);
 }
 
 
 $map-colors-gradient:(
-    "magenta": (rgb(58, 135, 234), rgb(255, 0, 255)),
-    "deepsea": (rgb(0, 128, 102), rgb(135, 222, 205)),
-    "red": (rgb(255, 0, 0), rgb(255, 204, 0)),
-    "blue": (rgb(0, 0, 255), rgb(159, 229, 215)),
-    "guardsmanred": (rgb(212, 0, 0), rgb(255, 52, 255)),
-    "supernova": (rgb(255, 204, 0), rgb(212, 42, 255)),
-    "brightturquoise": (rgb(0, 255, 204), rgb(42, 127, 255))
+    "magenta": (#3a87ea, #ff00ff),
+    "deepsea": (#008066, #87decd),
+    "red": (#ff0000, #ffcc00),
+    "blue": (#0000ff, #9fe5d7),
+    "guardsmanred": (#d40000, #ff34ff),
+    "supernova": (#ffcc00, #d42aff),
+    "brightturquoise": (#00ffcc, #2a7fff)
 );
 
 @each $key, $val1, $val2 in $map-colors-gradient {

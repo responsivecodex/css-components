@@ -1,88 +1,19 @@
-.switch-theme-control {
-  position: absolute;
-  top: 5px;
-  right: 40px;
-  label {
-  font-size: 0.7em;
+@import './_switch-form';
 
-  &:before {
-    content: "Light";
-    position: absolute;
-    left: -28px;
-    top: 0px;
-  }
-
-  &:after {
-    content: "Dark";
-    position: absolute;
-    top: 0px;
-    right: -30px;
-  }
-}
+.switch-theme-control{
+  color: var(--color);
+  font-size: 0.65rem;
 }
 
-.switch-theme {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 13px;
-    margin-left: 3em;
-    & input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--object-bg);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    &:before {
-      position: absolute;
-      content: "";
-      height: 13px;
-      width: 17px;
-      left: 0px;
-      bottom: 0;
-      background-color: var(--object-fg);
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-    }
-  }
-  
-  input:checked + .slider {
-    background-color: var(--object-off);
-    &:before {
-      -webkit-transform: translateX(13px);
-      -ms-transform: translateX(13px);
-      transform: translateX(13px);
-    }
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px var(--object-off);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-    &:before {
-      border-radius: 50%;
-    }
-  }
-  
-  label, ol, ul, h1, h2, h3, h4, h5, h6, 
-  p,
-  div,
-  em,
-  span {
-    color: var(--color);
-  }
-  
+.switch-theme-control::after{
+  content: 'Dark';
+  position:absolute;
+  top: 0;
+  right: -2.3em;
+}
+.switch-theme-control::before{
+  content: 'Light';
+  position:absolute;
+  top: 0;
+  left: -1.7rem;
+}
