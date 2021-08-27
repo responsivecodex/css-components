@@ -1,34 +1,87 @@
 .hexagon {
-    position: relative;
-    width: 32px; 
-    height: 18.48px;
-    background: var(--object-border-2);
-    margin: 9.24px 0;
-  }
-  
-  .hexagon:before,
-  .hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    left: 0;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-  }
-  
-  .hexagon:before {
-    bottom: 100%;
-    border-bottom: 9.24px solid var(--object-border-2);
-  }
-  
-  .hexagon:after {
-    top: 100%;
-    width: 0;
-    border-top: 9.24px solid var(--object-border-2);
+  position: relative;
+}
+
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../media/hexagon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  //filter: grayscale(100%);
+}
+
+.hexagon {
+  &.shadow{
+    filter: drop-shadow(2px 4px 6px var(--object-shadow-1));
+
+    &.disabled::before{
+      filter: grayscale(1) drop-shadow(2px 4px 6px var(--object-shadow-1))
+    }
+
+    &.white::before{
+      filter: brightness(10%) invert(1) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
+    &.magenta::before{
+      filter: brightness(1) hue-rotate(113deg) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
+    &.brown::before{
+      filter: brightness(12) invert(1) hue-rotate(45deg) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
+    &.fushia::before{
+      filter: brightness(177%) invert(1) hue-rotate(340deg) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
+    &.green::before{
+      filter: brightness(10) hue-rotate(305deg) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
   }
 
-  .hexagon:hover, .hexagon:hover:after, .hexagon:hover:before{
+  &.white::before{
+    filter: brightness(10%) invert(1);
+    &.hover:hover{
+      cursor: pointer;
+    }
+  }
+  &.magenta::before{
+    filter: brightness(1) hue-rotate(113deg);
+    &.hover:hover{
+      cursor: pointer;
+    }
+  }
+  &.brown::before{
+    filter: brightness(12) invert(1) hue-rotate(45deg);
+    &.hover:hover{
+      cursor: pointer;
+      filter: brightness(12) invert(1) hue-rotate(45deg) drop-shadow(2px 4px 6px var(--object-shadow-1));
+    }
+  }
+  &.fushia::before{
+    filter: brightness(177%) invert(1) hue-rotate(340deg);
+    &.hover:hover{
+      cursor: pointer;
+    }
+  }
+  &.green::before{
+    filter: brightness(10) hue-rotate(305deg);
+    &.hover:hover{
+      cursor: pointer;
+    }
+  }
+  &.disabled::before{
+  filter: grayscale(1);
+  }
+  &.hover:hover{
     cursor: pointer;
-    //box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, 30%);
-    filter: drop-shadow(0px 0px 5px calc(var(--object-border-1)+30));
+  }
+}
+ 
+
+  .hexagon-inside {
+    /* This will make it stack on top of the ::before */
+    position: relative;
   }

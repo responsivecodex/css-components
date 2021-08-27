@@ -1,75 +1,119 @@
 @use "sass:list";
+@use "sass:string";
+
+/* Hex Transparency
+100% — FF
+95% — F2
+90% — E6
+85% — D9
+80% — CC
+75% — BF
+70% — B3
+65% — A6
+60% — 99
+55% — 8C
+50% — 80
+45% — 73
+40% — 66
+35% — 59
+30% — 4D
+25% — 40
+20% — 33
+15% — 26
+10% — 1A
+5% — 0D
+0% — 00*/
+$map-colors: (
+  "--oxfordblue"  : #011638,
+  "--tealblue"    : #063863,
+  "--congressblue": #07409a,
+  "--blue"        : #1805ff,
+  "--azureradiance": #007bff,
+  "--royalblue"   : #040608,
+  "--veniceblue"  : #085a9f,
+  "--greenblue"   : #0a71c6,
+  "--mariner"     : #227ac5,
+  "--steelblue"   : #4682b4,
+  "--denim"       : #3483c4,
+  "--pictonblue"  : #44aae8,
+  "--curiousblue" : #2894be,
+  "--blueberry"   : #41a4f5,
+  "--malibu"      : #62afff,
+  "--cornflower"  : #a9cbef,
+  "--shipcove"    : #7c9bb7,
+  "--bermudagray" : #6789a7,
+  "--aquaperl"    : #83B3DB,
+  "--cyan"        : #36ffff,
+  "--lightcyan"   : #e0ffff,
+  "--waterleaf"   : #a3eaea,
+  "--freshair"    : #b2ffff,
+  
+  "--lipstick"    : #c60a71,
+  "--cornharvest" : #8b710a,
+  
+  "--camarone"    : #006d07,
+  "--deepsea"     : #008066,
+  "--elfgreen"    : #0a8b71,
+  "--chateaugreen": #47b44e,
+  "--pastelgreeen": #5de34e,
+  "--alienarmpit" : #71c60a,
+  "--olive"       : #6d6d00,
+
+  "--lemon"       : #ffff36,
+  "--palecanary"  : #ffff93,
+  "--chenin"      : #dbdb6e,
+  "--supernova"   : #ffcc00,
+  "--sunglow"     : #ffc436,
+  
+  "--magenta"       : #ff00ff,
+  "--purplepizzazz" : #ff34ff,
+  "--heliotrope"    : #c436ff,
+  "--electricviolet": #7B31FF,
+  "--mauve"         : #c493ff,
+  
+  "--peachorange" : #ffc493,
+  
+  "--white"       : #ffffff,
+  "--diesel"      : #090000,
+  "--heavymetal"  : rgb(32, 35, 32),
+  "--riverbed"    : #44555f,
+  "--stack"       : rgb(96, 98, 96),
+  "--silver"      : #cacaca,
+  "--pumpkin"     : #ff7821,
+  "--redsalsa"    : #fb3345,
+  "--corn"        : #e8ca00,
+  "--blackrock"   : #030325,
+  "--yellow"      : #FFFF00
+);
 
 :root{
-  --oxfordblue  : #011638;
-  --tealblue    : #063863;
-  --congressblue: #07409a;
-  --blue        : #1805ff;
-  --azureradiance: #007bff;
-  --royalblue   : #3a87ea;
-  --veniceblue  : #085a9f;
-  --greenblue   : #0a71c6;
-  --mariner     : #227ac5;
-  --steelblue   : #4682b4;
-  --denim       : #3483c4;
-  --pictonblue  : #44aae8;
-  --curiousblue : #2894be;
-  --blueberry   : #41a4f5;
-  --malibu      : #62afff;
-  --cornflower  : #a9cbef;
-  --shipcove    : #7c9bb7;
-  --bermudagray : #6789a7;
-  --aquaperl    : #83B3DB;
-  --cyan        : #36ffff;
-  --lightcyan   : #e0ffff;
-  --waterleaf   : #a3eaea;
-  --freshair    : #b2ffff;
-  
-  --lipstick    : #c60a71;
-  --cornharvest : #8b710a;
-  
-  --camarone    : #006d07;
-  --deepsea     : #008066;
-  --elfgreen    : #0a8b71;
-  --chateaugreen: #47b44e;
-  --pastelgreeen: #5de34e;
-  --alienarmpit : #71c60a;
-  --olive       : #6d6d00;
+  @each $key, $val1 in $map-colors {
+    #{$key} : #{$val1};
+    $i: 20;
+    @while $i <= 100 {
+      $d: #{$key}+'-'+#{$i};
+      #{$d}: rgba($val1, calc(#{$i} / 100));
+      $i: $i + 20;
+    }
+  }
+}
 
-  --lemon       : #ffff36;
-  --palecanary  : #ffff93;
-  --chenin      : #dbdb6e;
-  --supernova   : #ffcc00;  
-  --sunglow     : #ffc436;
-  
-  --magenta       : #ff00ff;
-  --purplepizzazz : #ff34ff;
-  --heliotrope    : #c436ff;
-  --electricviolet: #7B31FF;
-  --mauve         : #c493ff;
-  
-  --peachorange : #ffc493;
-    
-  --white       : #ffffff;
-  --diesel      : #090000;
-  --heavymetal  : rgb(32, 35, 32);
-  --riverbed    : #44555f;
-  --stack       : rgb(96, 98, 96);
-  --silver      : #cacaca;
-  --pumpkin     : #ff7821;
-  --redsalsa    : #fb3345;
-  --corn        : #e8ca00;
-  --blackrock   : #030325;
-  --yellow      : #fff70;
-};
+@each $key, $val1 in $map-colors {
+  $d : 'bg-'+ string.slice($key, 3);
+  .#{$d} {
+    background-color: #{$val1};
+    fill: #{$val1};
+    stroke:rgb(166, 168, 166);
+  }
+}
 
 [data-theme="light"]{
-  --bg-color     : var(--white);
-  --color        : var(--heavymetal);
-  --roundcolor   : var(--white);
-  --svg-container: var(--elfgreen);
-  --svg-icon     : var(--pumpkin);
-  --svg-color    : var(--redsalsa);
+  --bg-color       : var(--white);
+  --color          : var(--heavymetal);
+  --roundcolor     : var(--white);
+  --svg-container  : var(--elfgreen);
+  --svg-icon       : var(--pumpkin);
+  --svg-color      : var(--redsalsa);
 
   --object-border-1: var(--diesel);
   --object-border-2: var(--heavymetal);
@@ -77,8 +121,9 @@
   --object-border-4: var(--blueberry);
   --object-bg-1    : var(--diesel);
   --object-bg-2    : var(--riverbed);
-  --object-fg-1    : var(--pictonblue);
-  --object-fg-2    : var(--pictonblue);
+  --object-fg-1    : var(--azureradiance);
+  --object-fg-2    : var(--azureradiance);
+  --object-shadow-1: var(--mariner-60);
 
   // --object-border-1: var(--congressblue);
   // --object-border-2: var(--mariner);
@@ -89,21 +134,23 @@
 }
 
 [data-theme="dark"]{
-  --bg-color     : var(--heavymetal);
-  --color        : var(--white);
-  --roundcolor   : var(--heavymetal);
-  --svg-container: var(--white);
-  --svg-icon     : var(--pastelgreeen);
-  --svg-color    : var(--white);
+  --bg-color       : var(--heavymetal);
+  --color          : var(--white);
+  --roundcolor     : var(--heavymetal);
+  --svg-container  : var(--white);
+  --svg-icon       : var(--pastelgreeen);
+  --svg-color      : var(--white);
   --object-border-1: var(--congressblue);
   --object-border-2: var(--mariner);
-  --object-bg-1  : var(--bermudagray);
-  --object-bg-2  : var(--cornflower);
-  --object-fg-1  : var(--oxfordblue);
-  --object-fg-2  : var(--blueberry);
+  --object-bg-1    : var(--bermudagray);
+  --object-bg-2    : var(--cornflower);
+  --object-fg-1    : var(--oxfordblue);
+  --object-fg-2    : var(--blueberry);
+  --object-shadow-1: var(--white-60);  
 }
 
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 $map-colors-gradient:(
     "magenta": (#3a87ea, #ff00ff),
     "deepsea": (#008066, #87decd),
@@ -120,3 +167,18 @@ $map-colors-gradient:(
     }
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.shadow-1{
+  filter: drop-shadow(0px 0px 5px var(--object-shadow-1));  // Shadow around object
+}
+.shadow-2{
+  filter: drop-shadow(0px 0px 5px var(--object-shadow-2));  // Shadow around object
+}
+.shadow-hover-1:hover{
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px var(--object-shadow-1));  // Shadow around object
+}
+.shadow-hover-2:hover{
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px var(--object-shadow-2));  // Shadow around object
+}
